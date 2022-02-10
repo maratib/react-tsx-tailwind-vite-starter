@@ -1,15 +1,18 @@
 import { useState } from "react";
-import logo from "./logo.svg";
-import "./tailwind.css";
+import { BrowserRouter } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0);
+import HomeRoutes from "./routes/HomeRoutes";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
+export default function App() {
   return (
-    <div className="App">
-      <h1 className="text-red-500">Hello TailwindCSS with vite</h1>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Header />
+        <HomeRoutes />
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
-
-export default App;

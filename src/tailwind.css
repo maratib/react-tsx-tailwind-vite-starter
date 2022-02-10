@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* layer base preset */
+/* following when compiled will be inserted at the end of base styles */
+@layer base {
+  /* @font-face {
+    font-family: Oswald;
+    src: url(@/assets/fonts/Oswald/Oswald-Bold.ttf) format("​truetype​");
+  } */
+
+  body {
+    @apply z-0 bg-bgBody;
+  }
+  h1 {
+    @apply text-5xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+}
+.error {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+@layer components {
+  .primary_button {
+    @apply bg-gradient-to-r from-primary  to-gradient text-white p-3 rounded-3xl px-8;
+  }
+  .nav_links {
+    @apply before:absolute focus:text-black  before:bg-indigo-500 before:h-[6px] before:rounded-t-md before:w-12 before:mt-11;
+  }
+  .footer_details {
+    @apply font-[500] text-left;
+  }
+  .social_links {
+    @apply bg-gray-100 p-2 hover:rounded-xl  duration-500 hover:bg-primary hover:text-white cursor-pointer;
+  }
+  .menu_hover {
+    @apply text-primary cursor-pointer;
+  }
+  .list_style {
+    @apply mt-3 h-12 rounded-md flex justify-between bg-gray-100  items-center  w-full hover:bg-[#ededed];
+  }
+  .user_data_list {
+    @apply font-[300] rounded bg-gray-50 border-2 border-gray-100 flex w-min mr-4 px-[20px] py-2;
+  }
+  .user_data_icon {
+    @apply text-primary mr-3 h-5 w-5;
+  }
+  .dashboard_card {
+    @apply bg-white shadow-lg  rounded-lg h-48 md:w-80 w-full p-3 flex items-center  duration-500 justify-evenly;
+  }
+}
+
+@layer utilities {
+  .form-panel {
+    @apply md:mt-0 md:col-span-2 bg-white shadow sm:rounded-md px-4 py-5 sm:p-6;
+  }
+  .form-simple {
+    @apply mt-1 focus:ring-primary focus:border-primary block w-full shadow-sm sm:text-sm border-gray-300 rounded-md;
+  }
+  .form-underline {
+    @apply m-0 block w-full px-2 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-blue-300;
+  }
+  .form-gray {
+    @apply mt-1 block w-full rounded-md bg-gray-200  border-transparent focus:border-gray-500 focus:bg-white;
+  }
+  .form-dropdown {
+    @apply mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary                 focus:border-indigo-500 sm:text-sm;
+  }
+}
